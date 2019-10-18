@@ -58,27 +58,6 @@ int main() {
     print_bst(t);
     tree_delete(t,7);
     print_bst(t);
-/*	while(1) {
-		scanf("%d",&x);
-		if(x==-1) break;
-        searched = tree_delete(t,x);
-        if(searched==NULL) continue;
-        printf("%d is deleted.\n",searched->key);
-        print_bst(t);
-        free(searched);
-		searched=tree_search(t,x);
-		if(searched==NULL) {
-			printf("tree doens't have anything\n");
-			continue;
-		}
-		printf("val: %d searched: %d ",x,searched->key); 
-		if(pre(searched)!=NULL) printf("pre: %2d ",pre(searched)->key);
-		else printf("pre: no ");
-		if(suc(searched)!=NULL) printf("suc: %2d ",suc(searched)->key);
-		else printf("suc: no ");
-		if(nearest_neighbor(t,x)!=NULL) printf("nearest: %d\n",nearest_neighbor(t,x)->key);
-		else printf("neighbor err\n");
-	}*/
 	tree_free(t);
 	return 0;
 }
@@ -270,7 +249,6 @@ tree* make_tree(){
 }
 void print_node(node *cur) {
 	if(cur==NULL) return;
-
 	//if(cur->left) printf("left:%-2d  ",cur->l->key);
     //else printf("left:x   ");
 	//if(cur->r)printf("right:%-2d  ",cur->r->key);
