@@ -34,7 +34,8 @@ int main() {
 	node *searched;
 	int x,cnt,A[20];
     printf("2.TREE-INSERT\n");
-    for(cnt=0;cnt<20;cnt++) A[cnt]=rand()%50;
+    for(cnt=0;cnt<20;cnt++) printf("%-2d ",A[cnt]=rand()%50);
+    printf("\n");
 	for(cnt=0;cnt<20;cnt++) tree_insert(t,A[cnt]);
 	print_bst(t);
     printf("3.TREE-SEARCH (10,9,15)\n");
@@ -64,11 +65,11 @@ int main() {
 
 node* tree_insert(tree *t, int x) {
 	node *cur=t->root, *new=malloc(sizeof(node));
+	new->left=NULL,new->right=NULL, new->key=x;
 	if(t->root==NULL) {
 		t->root=new;
 		return new;
 	}
-	new->left=NULL,new->right=NULL, new->key=x;
 	while(1) {
 		if(x<cur->key) {
 			if(cur->left==NULL) {
